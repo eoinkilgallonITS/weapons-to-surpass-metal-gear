@@ -7,12 +7,14 @@ public class Gun : MonoBehaviour
     //Data
     public int ammo;
     public bool isAutomatic;
-    public GameObject BulletPrefab;
+    public Bullet BulletPrefab;
+    public Transform firingPoint;
+
+    public GameObject Owner;
 
     //Actions
-    public virtual void Fire(Vector3 firirgPosition) 
+    public virtual void Fire() 
     {
         ammo--;
     }
 }
-

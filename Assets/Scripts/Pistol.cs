@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    public override void Fire(Vector3 firirgPosition)
+    public override void Fire()
     {
-        Instantiate(BulletPrefab, firirgPosition, Quaternion.identity);
-        base.Fire(firirgPosition);
+        Bullet newBullet = Instantiate(BulletPrefab, firingPoint.position, Quaternion.identity);
+
+        newBullet.SetDirection(Owner.transform.up);
+
+        base.Fire();
     }
 }
